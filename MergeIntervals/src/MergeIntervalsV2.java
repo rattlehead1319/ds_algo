@@ -6,7 +6,7 @@ public class MergeIntervalsV2 {
             return intervals;
 
         // sort the intervals by start time
-        Collections.sort(intervals, (a, b) -> Integer.compare(a.start, b.start));
+        Collections.sort(intervals, Comparator.comparingInt(a -> a.start));
 
         List<Interval> mergedIntervals = new LinkedList<Interval>();
         Iterator<Interval> intervalItr = intervals.iterator();
