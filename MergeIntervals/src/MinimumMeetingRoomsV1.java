@@ -10,7 +10,7 @@ class Meeting {
     }
 };
 
-class MinimumMeetingRooms {
+class MinimumMeetingRoomsV1 {
 
     public static int findMinimumMeetingRooms(List<Meeting> meetings) {
         Collections.sort(meetings, Comparator.comparingInt(a -> a.start));
@@ -41,7 +41,7 @@ class MinimumMeetingRooms {
                 add(new Meeting(3, 5));
             }
         };
-        int result = MinimumMeetingRooms.findMinimumMeetingRooms(input);
+        int result = MinimumMeetingRoomsV1.findMinimumMeetingRooms(input);
         System.out.println("Minimum meeting rooms required: " + result);
 
         input = new ArrayList<>() {
@@ -51,7 +51,7 @@ class MinimumMeetingRooms {
                 add(new Meeting(7, 9));
             }
         };
-        result = MinimumMeetingRooms.findMinimumMeetingRooms(input);
+        result = MinimumMeetingRoomsV1.findMinimumMeetingRooms(input);
         System.out.println("Minimum meeting rooms required: " + result);
 
         input = new ArrayList<>() {
@@ -61,7 +61,7 @@ class MinimumMeetingRooms {
                 add(new Meeting(8, 12));
             }
         };
-        result = MinimumMeetingRooms.findMinimumMeetingRooms(input);
+        result = MinimumMeetingRoomsV1.findMinimumMeetingRooms(input);
         System.out.println("Minimum meeting rooms required: " + result);
 
         input = new ArrayList<>() {
@@ -71,7 +71,7 @@ class MinimumMeetingRooms {
                 add(new Meeting(3, 6));
             }
         };
-        result = MinimumMeetingRooms.findMinimumMeetingRooms(input);
+        result = MinimumMeetingRoomsV1.findMinimumMeetingRooms(input);
         System.out.println("Minimum meeting rooms required: " + result);
 
         input = new ArrayList<>() {
@@ -82,7 +82,7 @@ class MinimumMeetingRooms {
                 add(new Meeting(3, 5));
             }
         };
-        result = MinimumMeetingRooms.findMinimumMeetingRooms(input);
+        result = MinimumMeetingRoomsV1.findMinimumMeetingRooms(input);
         System.out.println("Minimum meeting rooms required: " + result);
     }
 }
