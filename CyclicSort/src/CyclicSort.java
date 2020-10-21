@@ -1,3 +1,11 @@
+class Utility {
+    static void swap(int[] nums, int x, int y) {
+        int temp = nums[y];
+        nums[y] = nums[x];
+        nums[x] = temp;
+    }
+}
+
 class CyclicSort {
 
     public static void sort(int[] nums) {
@@ -5,16 +13,10 @@ class CyclicSort {
         while (i < nums.length) {
             int j = nums[i] - 1;
             if (nums[i] != nums[j])
-                swap(nums, i, j);
+                Utility.swap(nums, i, j);
             else
                 i++;
         }
-    }
-
-    private static void swap(int[] nums, int x, int y) {
-        int temp = nums[y];
-        nums[y] = nums[x];
-        nums[x] = temp;
     }
 
     public static void main(String[] args) {
