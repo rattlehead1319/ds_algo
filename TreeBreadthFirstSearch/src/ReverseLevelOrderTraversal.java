@@ -1,18 +1,6 @@
-import jdk.nashorn.api.tree.Tree;
-
 import java.util.*;
 
-class TreeNode {
-    int val;
-    TreeNode left;
-    TreeNode right;
-
-    TreeNode(int x) {
-        val = x;
-    }
-};
-
-public class LevelOrderTraversal {
+class ReverseLevelOrderTraversal {
     public static List<List<Integer>> traverse(TreeNode root) {
         List<List<Integer>> result = new ArrayList<>();
         if (root == null) {
@@ -23,7 +11,7 @@ public class LevelOrderTraversal {
         while (!queue.isEmpty()) {
             int levelSize = queue.size();
             List<Integer> currentLevel = new ArrayList<>(levelSize);
-            for (int i = 0; i <levelSize; i++) {
+            for (int i = 0; i < levelSize; i++) {
                 TreeNode currentNode = queue.poll();
                 currentLevel.add(currentNode.val);
                 if (currentNode.left != null) {
@@ -33,7 +21,7 @@ public class LevelOrderTraversal {
                     queue.offer(currentNode.right);
                 }
             }
-            result.add(currentLevel);
+            result.add(0, currentLevel);
         }
         return result;
     }
@@ -45,7 +33,7 @@ public class LevelOrderTraversal {
         root.left.left = new TreeNode(9);
         root.right.left = new TreeNode(10);
         root.right.right = new TreeNode(5);
-        List<List<Integer>> result = LevelOrderTraversal.traverse(root);
-        System.out.println("Level order traversal: " + result);
+        List<List<Integer>> result = ReverseLevelOrderTraversal.traverse(root);
+        System.out.println("Reverse level order traversal: " + result);
     }
 }
