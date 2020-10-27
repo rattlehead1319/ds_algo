@@ -1,31 +1,24 @@
 import java.util.*;
 
-import java.util.*;
-
-class TreeNode {
-    int val;
-    TreeNode left;
-    TreeNode right;
-
-    TreeNode(int x) {
-        val = x;
-    }
-};
-
-public class LevelOrderTraversal {
-    public static List<List<Integer>> traverse(TreeNode root) {
-        List<List<Integer>> result = new ArrayList<>();
+class LevelOrderSuccessor {
+    public static TreeNode findSuccessor(TreeNode root, int key) {
         if (root == null) {
-            return result;
+            return null;
         }
+        TreeNode prev = null;
+        TreeNode result = null;
         Queue<TreeNode> queue = new LinkedList<>();
         queue.offer(root);
         while (!queue.isEmpty()) {
             int levelSize = queue.size();
-            List<Integer> currentLevel = new ArrayList<>(levelSize);
             for (int i = 0; i <levelSize; i++) {
                 TreeNode currentNode = queue.poll();
-                currentLevel.add(currentNode.val);
+                if (prev != null) {
+                    return currentNode;
+                }
+                if (currentNode.val == key) {
+                    prev = currentNode;
+                }
                 if (currentNode.left != null) {
                     queue.offer(currentNode.left);
                 }
@@ -33,9 +26,8 @@ public class LevelOrderTraversal {
                     queue.offer(currentNode.right);
                 }
             }
-            result.add(currentLevel);
         }
-        return result;
+        return null;
     }
 
     public static void main(String[] args) {
@@ -45,7 +37,11 @@ public class LevelOrderTraversal {
         root.left.left = new TreeNode(9);
         root.right.left = new TreeNode(10);
         root.right.right = new TreeNode(5);
-        List<List<Integer>> result = LevelOrderTraversal.traverse(root);
-        System.out.println("Level order traversal: " + result);
+        TreeNode result = LevelOrderSuccessor.findSuccessor(root, 12);
+        if (result != null)
+            System.out.println(result.val + " ");
+        result = LevelOrderSuccessor.findSuccessor(root, 9);
+        if (result != null)
+            System.out.println(result.val + " ");
     }
 }
