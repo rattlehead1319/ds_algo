@@ -1,47 +1,18 @@
 import java.util.*;
 
-class TreeNodeX {
-    int val;
-    TreeNodeX left;
-    TreeNodeX right;
-    TreeNodeX next;
 
-    TreeNodeX(int x) {
-        val = x;
-        left = right = next = null;
-    }
 
-    // level order traversal using 'next' pointer
-    void printLevelOrder() {
-        TreeNodeX nextLevelRoot = this;
-        while (nextLevelRoot != null) {
-            TreeNodeX current = nextLevelRoot;
-            nextLevelRoot = null;
-            while (current != null) {
-                System.out.print(current.val + " ");
-                if (nextLevelRoot == null) {
-                    if (current.left != null)
-                        nextLevelRoot = current.left;
-                    else if (current.right != null)
-                        nextLevelRoot = current.right;
-                }
-                current = current.next;
-            }
-            System.out.println();
-        }
-    }
-};
-
-class ConnectLevelOrderSiblings {
+class ConnectAllSiblings {
     public static void connect(TreeNodeX root) {
         if (root == null) {
             return;
         }
         Queue<TreeNodeX> queue = new LinkedList<>();
         queue.offer(root);
+        TreeNodeX linkRoot = null;
         while (!queue.isEmpty()) {
             int levelSize = queue.size();
-            TreeNodeX linkRoot = null;
+
             for (int i = 0; i <levelSize; i++) {
                 TreeNodeX currentNode = queue.poll();
                 if (linkRoot == null) {
@@ -57,7 +28,6 @@ class ConnectLevelOrderSiblings {
                     queue.offer(currentNode.right);
                 }
             }
-            linkRoot.next = null;
         }
     }
 
@@ -68,8 +38,14 @@ class ConnectLevelOrderSiblings {
         root.left.left = new TreeNodeX(9);
         root.right.left = new TreeNodeX(10);
         root.right.right = new TreeNodeX(5);
-        ConnectLevelOrderSiblings.connect(root);
-        System.out.println("Level order traversal using 'next' pointer: ");
-        root.printLevelOrder();
+        ConnectAllSiblings.connect(root);
+
+        // level order traversal using 'next' pointer
+        TreeNodeX current = root;
+        System.out.println("Traversal using 'next' pointer: ");
+        while (current != null) {
+            System.out.print(current.val + " ");
+            current = current.next;
+        }
     }
 }
