@@ -14,10 +14,12 @@ public class FindAllTreePaths {
         }
         path.add(root.val);
         if (root.val == sum && root.right == null && root.left == null) {
-            allPaths.add(path);
+            allPaths.add(new ArrayList<>(path));
+        } else {
+            traverse(root.left, sum - root.val, allPaths, path);
+            traverse(root.right, sum - root.val, allPaths, path);
         }
-        traverse(root.left, sum - root.val, allPaths, path);
-        traverse(root.right, sum - root.val, allPaths, path);
+        path.remove(path.size() - 1);
     }
 
     public static void main(String[] args) {
