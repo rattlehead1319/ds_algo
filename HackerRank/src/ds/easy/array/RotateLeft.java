@@ -1,4 +1,4 @@
-package ds.easy;
+package ds.easy.array;
 
 import java.util.*;
 public class RotateLeft {
