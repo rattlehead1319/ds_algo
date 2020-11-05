@@ -1,4 +1,4 @@
-package ds.medium;
+package ds.medium.array;
 
 import java.util.*;
 
