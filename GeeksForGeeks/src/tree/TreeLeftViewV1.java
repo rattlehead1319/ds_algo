@@ -1,5 +1,10 @@
 package tree;
 
+/**
+ * Preorder traversal takes into account of traversing left nodes first
+ * We just need to ignore their corresponding sibling right nodes
+ */
+
 public class TreeLeftViewV1 {
     static class Node {
         int data;
