@@ -2,7 +2,7 @@ package tree;
 
 import java.util.*;
 
-public class MaxTreeWidth {
+public class TreeMaxWidth {
     static class Node {
         int data;
         Node left;
