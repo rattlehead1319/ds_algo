@@ -1,4 +1,4 @@
-package tree;
+package tree.tutorials;
 
 /**
  * For linkedlist, traversal shall be inorder

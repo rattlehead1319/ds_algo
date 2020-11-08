@@ -1,28 +1,27 @@
-package tree;
+package tree.tutorials;
 
 import java.util.*;
 
-public class TreeLeftViewV2 {
+public class TreeMaxWidth {
     static class Node {
         int data;
         Node left;
         Node right;
     }
 
-    static void printView(Node root) {
+    static int findMaxWidth(Node root) {
         if (root == null) {
-            return;
+            return 0;
         }
+
         Queue<Node> nodeQ = new LinkedList<>();
         nodeQ.add(root);
-
+        int maxWidth = Integer.MIN_VALUE;
         while(!nodeQ.isEmpty()) {
             int count = nodeQ.size();
+            maxWidth = Math.max(count, maxWidth);
             for (int index = 0; index < count; index++) {
                 Node current = nodeQ.poll();
-                if (index == 0) {
-                    System.out.println(current.data + " ");
-                }
                 if (current.left != null) {
                     nodeQ.add(current.left);
                 }
@@ -31,6 +30,7 @@ public class TreeLeftViewV2 {
                 }
             }
         }
+        return maxWidth;
     }
-
 }
+

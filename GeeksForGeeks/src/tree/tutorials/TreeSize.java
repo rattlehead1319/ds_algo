@@ -1,4 +1,4 @@
-package tree;
+package tree.tutorials;
 
 public class TreeSize {
     static class Node {

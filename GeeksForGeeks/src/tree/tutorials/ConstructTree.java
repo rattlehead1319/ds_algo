@@ -1,4 +1,4 @@
-package tree;
+package tree.tutorials;
 
 /**
  * Visit again and again

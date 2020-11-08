@@ -1,4 +1,4 @@
-package tree;
+package tree.tutorials;
 
 public class PrintNodesAtK {
     static class Node {

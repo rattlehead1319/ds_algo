@@ -1,4 +1,4 @@
-package tree;
+package tree.tutorials;
 
 public class TreeDiameter {
     static class Node {

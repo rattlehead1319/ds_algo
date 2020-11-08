@@ -1,4 +1,4 @@
-package tree;
+package tree.tutorials;
 
 /**
  * This solution assumes that both integers are present in the binary tree

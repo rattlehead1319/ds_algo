@@ -1,4 +1,4 @@
-package tree;
+package tree.tutorials;
 
 /**
  * Preorder traversal takes into account of traversing left nodes first

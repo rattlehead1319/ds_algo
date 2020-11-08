@@ -1,4 +1,4 @@
-package tree;
+package tree.tutorials;
 
 /***
  * Time complexity is O(logn * logn), should be noticed y

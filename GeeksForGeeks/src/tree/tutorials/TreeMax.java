@@ -1,4 +1,4 @@
-package tree;
+package tree.tutorials;
 
 public class TreeMax {
     static class Node {
