@@ -26,8 +26,9 @@ public class ConstructTree {
         }
         Node root = new Node(preOrder[preIndex++]);
         int inIndex = 0;
-        for (inIndex = start; inIndex <= end; inIndex++) {
-            if (inOrder[inIndex] == root.data) {
+        for (int index = start; index <= end; index++) {
+            if (inOrder[index] == root.data) {
+                inIndex = index;
                 break;
             }
         }
