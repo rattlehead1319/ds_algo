@@ -1,5 +1,9 @@
 package tree.tutorials;
 
+/**
+ * Visit again
+ */
+
 public class BurnTheTree {
     static class Node {
         int data;
