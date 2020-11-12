@@ -2,6 +2,10 @@ package bst.problems.medium;
 
 import java.util.*;
 
+/***
+ * Good one
+ */
+
 class NodeRange {
     Node node;
     int min;
