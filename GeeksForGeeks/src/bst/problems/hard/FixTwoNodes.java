@@ -31,7 +31,6 @@ public class FixTwoNodes {
         if (h.prev != null && h.prev.data > root.data) {
             if (h.first == null) {
                 h.first = h.prev;
-                h.second = root;
             }
             h.second = root;
         }
