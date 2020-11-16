@@ -13,7 +13,6 @@ public class BinaryHeapOperations {
     int left(int i) { return (2 * i + 1); }
     int right(int i) { return (2 * i + 2); }
 
-    // You need to write code for below three functions
     int extractMin() {
         if (heap_size == 0) {
             return -1;
