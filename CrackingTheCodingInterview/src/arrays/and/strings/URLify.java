@@ -5,7 +5,7 @@ package arrays.and.strings;
  */
 
 public class URLify {
-    void replacSpaces(char[] str, int length) {
+    void replaceSpaces(char[] str, int length) {
         int spaceCount = 0;
         for (int index = 0; index < str.length; index++) {
             if (str[index] == ' ') {
@@ -26,5 +26,4 @@ public class URLify {
             }
         }
     }
-
 }
