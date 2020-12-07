@@ -22,7 +22,7 @@ public class MaxRectangularAreaInHistogram {
         result[0] = -1;
         stack.push(0);
         for (int i = 1; i < n; i++) {
-            while (!stack.isEmpty() && hist[i] < hist[stack.peek()]) {
+            while (!stack.isEmpty() && hist[i] <= hist[stack.peek()]) {
                 stack.pop();
             }
             if (stack.isEmpty()) {
@@ -41,7 +41,7 @@ public class MaxRectangularAreaInHistogram {
         result[n-1] = n;
         stack.push(n-1);
         for (int i = n-2; i >= 0; i--) {
-            while (!stack.isEmpty() && hist[i] < hist[stack.peek()]) {
+            while (!stack.isEmpty() && hist[i] <= hist[stack.peek()]) {
                 stack.pop();
             }
             if (stack.isEmpty()) {
