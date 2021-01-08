@@ -8,22 +8,20 @@ public class LongestIncreasingSubsequence {
         int max = 1;
 
         for (int i = 1; i < n; i++) {
-            int maxVal = Integer.MIN_VALUE;
+            lis[i] = 1;
             for (int j = 0; j < i; j++) {
-                int val = 1;
-                if (arr[j] <= arr[i] ) {
-                    val += lis[j];
+                if (arr[j] < arr[i] ) {
+                    lis[i] = Math.max(lis[i], lis[j] + 1);
                 }
-                maxVal = Math.max(val, maxVal);
             }
-            lis[i] = maxVal;
             max = Math.max(max, lis[i]);
         }
-        
+
         return max;
     }
 
     public static void main (String[] args) {
         System.out.println(findLIS(new int[]{3,4,2,8,10,5,1}));
+        System.out.println(findLIS(new int[]{10,5,18,7,2,9}));
     }
 }
