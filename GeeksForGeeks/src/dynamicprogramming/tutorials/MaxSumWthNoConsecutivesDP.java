@@ -4,6 +4,11 @@ public class MaxSumWthNoConsecutivesDP {
 
     public static int maxSum (int[] arr) {
         int n = arr.length;
+
+        if (n == 1) {
+            return arr[0];
+        }
+
         int[] dp = new int[n+1];
         dp[0] = 0;
         dp[1] = arr[0];
