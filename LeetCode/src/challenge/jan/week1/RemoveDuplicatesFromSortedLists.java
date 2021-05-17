@@ -1,6 +1,15 @@
+package challenge.jan.week1;
 import java.util.*;
 
-public class LLDeleteDuplicates {
+class ListNode {
+    int val;
+    ListNode next;
+    ListNode() {}
+    ListNode(int val) { this.val = val; }
+    ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+}
+
+public class RemoveDuplicatesFromSortedLists {
     public ListNode deleteDuplicates(ListNode head) {
         ListNode curr = head;
         ListNode prev = null;
@@ -30,7 +39,7 @@ public class LLDeleteDuplicates {
             prev = curr;
             curr = curr.next;
         }
-        
+
         return head;
-    } 
+    }
 }

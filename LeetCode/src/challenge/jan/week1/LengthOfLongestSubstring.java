@@ -1,6 +1,8 @@
+package challenge.jan.week1;
+
 import java.util.*;
 
-public class LengthOgLongestSubstring {
+public class LengthOfLongestSubstring {
     public int lengthOfLongestSubstring(String s) {
         if (s == null || s.equals("")) {
             return 0;

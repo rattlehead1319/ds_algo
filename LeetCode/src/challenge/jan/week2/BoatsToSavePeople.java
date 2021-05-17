@@ -1,3 +1,5 @@
+package challenge.jan.week2;
+
 import java.util.*;
 
 public class BoatsToSavePeople {

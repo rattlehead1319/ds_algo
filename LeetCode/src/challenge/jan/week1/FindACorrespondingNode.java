@@ -1,4 +1,4 @@
-package challenge;
+package challenge.jan.week1;
 
 import java.util.*;
 

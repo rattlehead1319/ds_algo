@@ -1,3 +1,5 @@
+package challenge.jan.week1;
+
 public class KthMissingPositiveNumber {
   public int findKthPositive(int[] arr, int k) {
         int i = 1;
