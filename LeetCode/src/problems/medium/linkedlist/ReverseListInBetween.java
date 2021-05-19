@@ -1,6 +1,4 @@
-package problems.medium;
-
-import problems.easy.ReverseLinkedList;
+package problems.medium.linkedlist;
 
 public class ReverseListInBetween {
     static class ListNode {

@@ -1,4 +1,4 @@
-package problems.medium;
+package problems.medium.tree;
 
 class TreeNode {
     int val;

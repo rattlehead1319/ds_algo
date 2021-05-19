@@ -1,4 +1,4 @@
-package problems.medium;
+package problems.medium.bst;
 
 public class UniqueBSTs {
     public int numTrees(int n) {

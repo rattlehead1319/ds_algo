@@ -1,4 +1,11 @@
-package problems.medium;
+package problems.medium.bst;
+
+class TreeNode {
+    int val;
+    TreeNode left;
+    TreeNode right;
+    TreeNode(int val) { this.val = val; }
+}
 
 public class ValidateBST {
     public boolean isValidBST(TreeNode root) {

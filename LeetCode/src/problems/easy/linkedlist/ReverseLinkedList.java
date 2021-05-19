@@ -1,4 +1,4 @@
-package problems.easy;
+package problems.easy.linkedlist;
 
 public class ReverseLinkedList {
     static class ListNode {

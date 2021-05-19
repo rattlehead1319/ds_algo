@@ -1,4 +1,4 @@
-package problems.medium;
+package problems.medium.dp;
 
 public class DecodeWays {
     public int numDecodings(String s) {

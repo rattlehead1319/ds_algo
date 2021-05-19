@@ -1,4 +1,6 @@
-package problems.medium;
+package problems.medium.tree;
+
+import problems.medium.tree.TreeNode;
 
 import java.util.*;
 
