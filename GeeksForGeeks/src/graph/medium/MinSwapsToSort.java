@@ -2,79 +2,55 @@ package graph.medium;
 
 import java.util.*;
 
+class Pair implements Comparable<Pair> {
+    int key;
+    int value;
+
+    Pair(int key, int value) {
+        this.key = key;
+        this.value = value;
+    }
+
+    @Override
+    public int compareTo (Pair p) {
+        return this.key - p.key;
+    }
+}
+
 public class MinSwapsToSort {
-    static class Helper implements Comparable<Helper> {
-        int value;
-        int index;
-        Helper (int value, int index) {
-            this.value = value;
-            this.index = index;
-        }
-        @Override
-        public int compareTo (Helper h) {
-            return this.value - h.value;
-        }
-    }
-
-    public int minSwaps(int[] arr, int N) {
-
-        ArrayList<Helper> sortedList = new ArrayList<>();
-        for (int i = 0; i < arr.length; i++) {
-            sortedList.add(new Helper(arr[i], i));
-        }
-        Collections.sort(sortedList);
-
-        ArrayList<ArrayList<Integer>> graph = new ArrayList<>();
-        for (int i = 0; i < arr.length; i++) {
-            ArrayList<Integer> list = new ArrayList<>();
-            if (arr[i] != sortedList.get(i).value) {
-                list.add(sortedList.get(i).index);
-            }
-            graph.add(i, list);
+    public int minSwaps(int nums[])
+    {
+        if (nums == null || nums.length == 0) {
+            return 0;
         }
 
-        return graphCycle(graph, N);
-    }
+        int n = nums.length;
 
-    private int graphCycle (ArrayList<ArrayList<Integer>> graph, int N) {
-        boolean[] visited = new boolean[N];
+        List<Pair> list = new ArrayList<>();
+        for (int i = 0; i < n; i++) {
+            list.add(new Pair(nums[i], i));
+        }
+
+        Collections.sort(list);
+
         int swaps = 0;
-        for (int index = 0; index < graph.size(); index++) {
-            if (!visited[index]) {
-                boolean[] recStckArr = new boolean[N];
-                boolean hasCycle = dfs(graph, index, visited, recStckArr);
-                if (hasCycle) {
-                    int nodes = 0;
-                    for (int j = 0; j < recStckArr.length; j++) {
-                        if (recStckArr[j]) {
-                            nodes++;
-                        }
-                    }
-                    swaps += nodes - 1;
-                }
+        boolean visited[] = new boolean[n];
+        for (int i = 0; i < n; i++) {
+
+            int cycleSize = 0;
+            int j = i;
+            while (!visited[j]) {
+                visited[j] = true;
+
+                j = list.get(j).value;
+                cycleSize++;
+            }
+
+            if (cycleSize > 0) {
+                swaps += cycleSize - 1;
             }
         }
+
         return swaps;
-    }
-
-    private boolean dfs (ArrayList<ArrayList<Integer>> graph, int vertex, boolean[] visited, boolean[] recStckArr) {
-        visited[vertex] = true;
-        recStckArr[vertex] = true;
-        for (Integer v: graph.get(vertex)) {
-            if (!visited[v]) {
-                if (dfs(graph, v, visited, recStckArr)) {
-                    return true;
-                }
-            } else if (recStckArr[v]) {
-                return true;
-            }
-        }
-        recStckArr[vertex] = false;
-        return false;
-    }
-
-    public static void main (String[] args) {
-        MinSwapsToSort msts = new MinSwapsToSort();
-        System.out.println(msts.minSwaps(new int[]{4, 3, 2, 1}, 4));
     }
 }
