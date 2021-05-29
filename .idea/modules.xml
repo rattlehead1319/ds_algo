@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/CrackingTheCodingInterview/CrackingTheCodingInterview.iml" filepath="$PROJECT_DIR$/CrackingTheCodingInterview/CrackingTheCodingInterview.iml" />
+      <module fileurl="file://$PROJECT_DIR$/HackerRank/DS.iml" filepath="$PROJECT_DIR$/HackerRank/DS.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Educative.io/Educative.io.iml" filepath="$PROJECT_DIR$/Educative.io/Educative.io.iml" />
+      <module fileurl="file://$PROJECT_DIR$/GeeksForGeeks/GeeksForGeeks.iml" filepath="$PROJECT_DIR$/GeeksForGeeks/GeeksForGeeks.iml" />
+      <module fileurl="file://$PROJECT_DIR$/HackerRank/HackerRank.iml" filepath="$PROJECT_DIR$/HackerRank/HackerRank.iml" />
+      <module fileurl="file://$PROJECT_DIR$/LeetCode/LeetCode.iml" filepath="$PROJECT_DIR$/LeetCode/LeetCode.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Youtube/Youtube.iml" filepath="$PROJECT_DIR$/Youtube/Youtube.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ds_algo.iml" filepath="$PROJECT_DIR$/ds_algo.iml" />
+    </modules>
+  </component>
+</project>

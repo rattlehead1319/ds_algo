@@ -1,4 +1,4 @@
-package google.medium.graph;
+package problems.medium.graph;
 
 import java.util.*;
 
