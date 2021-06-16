@@ -1,4 +1,4 @@
-package problems.easy.string;
+package problems.easy.strings;
 
 import java.util.*;
 
