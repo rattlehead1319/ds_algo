@@ -1,6 +1,6 @@
 package arrays.medium;
 
-public class MaximumIndex {
+public class    MaximumIndex {
     static int maxIndexDiff(int arr[], int n) {
 
         int[] lmin = new int[n];

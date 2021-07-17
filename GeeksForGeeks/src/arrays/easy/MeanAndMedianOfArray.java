@@ -9,7 +9,7 @@ public class MeanAndMedianOfArray {
         Arrays.sort(A);
 
         //Your code here
-        //If median is fraction then conver it to integer and return
+        //If median is fraction then convert it to integer and return
         return N%2 == 0 ? (A[N/2] + A[(N/2)-1])/2 : A[N/2];
     }
 
