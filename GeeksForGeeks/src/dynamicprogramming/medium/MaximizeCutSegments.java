@@ -1,3 +1,5 @@
+package dynamicprogramming.medium;
+
 public class MaximizeCutSegments {
     public int maximizeCuts(int n, int x, int y, int z)
     {
