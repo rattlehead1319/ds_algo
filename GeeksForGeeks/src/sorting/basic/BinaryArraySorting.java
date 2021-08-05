@@ -1,31 +1,17 @@
 package sorting.basic;
 
 public class BinaryArraySorting {
-    static void binSort(int arr[], int n)
-    {
-        if (n == 0 || n == 1) {
-            return;
-        }
-
-        int i = 0;
-        int j = n-1;
-
-        while (i <= j && j >= 0) {
-            while (i <= j && arr[i] == 0) {
-                i++;
-            }
-
-            while (j >= 0 && arr[j] == 1) {
-                j--;
-            }
-
-            if (i <= j) {
-                swap(arr, i, j);
+    static int[] SortBinaryArray(int arr[], int n) {
+        int zeroIndex = 0;
+        for (int i = 0; i < n; i++) {
+            if (arr[i] == 0) {
+                swap(arr, zeroIndex++, i);
             }
         }
+        return arr;
     }
 
-    static void swap (int[] arr, int i, int j) {
+    private static void swap(int[] arr, int i, int j) {
         int temp = arr[i];
         arr[i] = arr[j];
         arr[j] = temp;
